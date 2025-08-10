@@ -1,4 +1,4 @@
-package assignmets;
+package assignments;
 import java.util.*;
 public class Main {
   static String name ;
