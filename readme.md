@@ -30,7 +30,7 @@
 
 - ### [Leetcode Questions : Practise](./LeetcodeQuestions/README.md)
 
-- ### [Blogs : showcase](./Blogs/README.md)
+- ### [Blogs : showcase](./Blogs/readme.md)
 </br>
 
 

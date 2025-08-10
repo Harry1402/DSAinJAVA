@@ -1,3 +1,4 @@
+package assignmets;
 import java.util.*;
 public class Main {
   static String name ;
