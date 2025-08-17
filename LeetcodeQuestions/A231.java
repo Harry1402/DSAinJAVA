@@ -2,17 +2,21 @@ import java.util.Scanner;
 
 public class A231 {
 
-    static boolean isPowerOfTwo(int n) {
+    public static boolean isPowerOfTwo(int n) {
         if (n == 1)
             return true;
-        if (n <= 0 || n % 2 != 0)
+        if (n < 1)
             return false;
-        return isPowerOfTwo(n / 2); // recursion
+        return (n % 2 == 0) && isPowerOfTwo(n / 2);
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
         int n = sc.nextInt();
-        System.out.println(isPowerOfTwo(n));
+
+        boolean result = isPowerOfTwo(n);
+        System.out.println("Is power of two? " + result);
+        sc.close();
     }
 }
