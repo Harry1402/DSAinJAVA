@@ -1,77 +1,95 @@
+import java.io.*;
+import java.util.Queue;
 
-package classProblems;
-
-class Queue {{
+class queue
+{
     private int a[];
     private int size;
-    private int front, rear;}
+    private int front , rear;
 
-    Queue(int s) {
+    queue(int s)
+    {
         a = new int[s];
         size = s;
         front = rear = -1;
     }
-
-    int isEmpty() {
-        if ((front == -1) && (rear == -1))
+     int isEmpty()
+     {
+        if((front == -1) && (rear == -1))
             return 1;
         else
             return 0;
-    }
+     }
 
-    int isFull() {
-        if ((front == 0) && (rear == size - 1))
+     int isFull()
+     {
+        if(rear == size-1)
             return 1;
-        else
+        else  
             return 0;
-    };
+     }
 
-    void Enqueue(int x) {
-        if (isFull() == 1) {
-            System.out.println("Queue is full");
-
-        } else {
-            if (isEmpty() == 1) {
-                front = rear = 0;
-                a[rear] = x;
-            } else {
-                rear++;
-                a[rear] = x;
-            }
+     void enque(int x)
+     {
+        if(isFull() == 1)
+        {
+            System.out.println("Queue is Full");
         }
+        else
+            {
+                if(isEmpty() == 1)
+                {
+                    rear = front = 0;
+                    a[rear] = x;
+                }
+                else
+                {
+                    rear++;
+                    a[rear] = x;
+                }
+            }
+     }
 
-    };
-
-    void deque() {
-         int x = a[front];
-        if (isEmpty() == 1) {
-            System.out.println("Quuew 9is empty");
-        } else {
-           
-            if (front == rear) {
+     int deque()
+     {
+        if( isEmpty() == 1)
+        {
+            System.out.println("Queue is Empty");
+            return -1;
+        }
+        else
+        {
+            int x = a[front];
+            if(front == rear)
+            {
                 front = rear = -1;
-
-            } else {
+              
+            }
+            else
+            {
                 front++;
             }
+              return x;
         }
-      return x;
-    }
-     
+     }
 
-}
+     public static void main(String[] args) {
+        
+        queue q = new queue(5);
 
-public static void main(String[] args) {
-    Queue q = new Queue(5); 
-    q.Enqueue(10); 
-    q.Enqueue(20); 
-    q.Enqueue(30); 
-    q.Enqueue(40); 
-    q.Enqueue(50); 
-    System.out.println(q.deque()); 
-    System.out.println(q.deque()); 
-    System.out.println(q.deque()); 
-    System.out.println(q.deque()); 
-    System.out.println(q.deque()); 
-    System.out.println(q.deque()); 
+        q.deque();
+        q.enque(10);
+        q.enque(20);
+        q.enque(30);
+        q.enque(40);
+        q.enque(50);
+        q.enque(60);
+
+        System.out.println(q.deque());
+        System.out.println(q.deque());
+        System.out.println(q.deque());
+        System.out.println(q.deque());
+        System.out.println(q.deque());
+        System.out.println(q.deque());
+     }
 }
