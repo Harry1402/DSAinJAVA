@@ -17,6 +17,7 @@ public class Maz1 {
                 one = 0;
             }
             ret =Math.max(one_and_zero, ret);
+            ret=MAth.m
         }
         return ret ;
 
