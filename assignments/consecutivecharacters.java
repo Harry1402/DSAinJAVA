@@ -17,6 +17,6 @@ public class ConsecutiveCharacters {
 
     public static void main(String[] args) {
         String s = "abbcccddddeeeeedcba";
-        System.out.println(maxPower(s)); // expected output: 5
+        System.out.println(maxPower(s));
     }
 }
